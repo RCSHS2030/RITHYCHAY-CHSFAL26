@@ -18,14 +18,14 @@ def write_high_score(score):
         f.write(str(score))
 
 def play_game():
-    target = random.randint(1, 100)
+    target = random.randint(1, 200)
     guesses = 0
-    print("I'm thinking of a number between 1 and 100. Try to guess it!")
+    print("I'm thinking of a number between 1 and 200. Try to guess it!")
     while True:
         try:
             guess = int(input("Enter your guess: ").strip())
         except ValueError:
-            print("Please enter a valid integer.")
+            print("Please enter a positive integer.")
             continue
         guesses += 1
         if guess < target:
